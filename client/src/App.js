@@ -15,7 +15,7 @@ function App() {
       .then(res => res.json())
       .then(data => setFridges(data))
 
-    fetch("http://localhost:9292/users/1")
+    fetch("http://localhost:9292/users/2")
       .then(res => res.json())
       .then(data => {
         setUser(data)

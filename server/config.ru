@@ -1,18 +1,6 @@
-require_relative "./config/environment"
+# This file is used by Rack-based servers to start the application.
 
-# Allow CORS (Cross-Origin Resource Sharing) requests
-use Rack::Cors do
-  allow do
-    origins '*'
-    resource '*', headers: :any, methods: [:get, :post, :delete, :put, :patch, :options, :head]
-  end
-end
+require_relative "config/environment"
 
-# Parse JSON from the request body into the params hash
-use Rack::JSONBodyParser
-
-# Our application
-run ApplicationController
-use UsersController
-use FridgesController
-use FoodsController
+run Rails.application
+Rails.application.load_server

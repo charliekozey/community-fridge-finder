@@ -1,57 +1,75 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby "3.0.0"
 
-# A DSL for quickly creating web applications
-# https://github.com/sinatra/sinatra
-gem "sinatra", "~> 2.1"
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
-# A fast and simple web server
-# https://github.com/macournoyer/thin
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
 
-# Rack middleware. Used specifically for parsing the request body into params.
-# https://github.com/rack/rack-contrib
-gem "rack-contrib", "~> 2.3"
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
-# More Rack middleware! Used to handle CORS requests
-# https://github.com/cyu/rack-cors
-gem "rack-cors", "~> 1.1"
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", "~> 5.0"
 
-# An object-relational mapper
-# https://guides.rubyonrails.org/active_record_basics.html
-gem "activerecord", "~> 6.1"
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'rack-cors'
 
-# Configures common Rake tasks for working with Active Record
-# https://github.com/sinatra-activerecord/sinatra-activerecord
-gem "sinatra-activerecord", "~> 2.0"
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 
-# Run common tasks from the command line
-# https://github.com/ruby/rake
-gem "rake", "~> 13.0"
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
 
-# Provides functionality to interact with a SQLite3 database
-gem "sqlite3", "~> 1.4"
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
 
-# Require all files in a folder
-gem "require_all", "~> 3.0"
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
 
-# These gems will only be used when we are running the application locally
+# Use Redis adapter to run Action Cable in production
+# gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Sass to process CSS
+# gem "sassc-rails"
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+end
+
 group :development do
-  gem "pry", "~> 0.14.1"
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 
-  # Automatically reload when there are changes
-  # https://github.com/alexch/rerun
-  gem "rerun"
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
-# These gems will only be used when we are running tests
 group :test do
-  gem "database_cleaner", "~> 2.0"
-  gem "rack-test", "~> 1.1"
-  gem "rspec", "~> 3.10"
-  gem "rspec-json_expectations", "~> 2.2"
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
-
-gem "eventmachine", "~> 1.2.7"
-
-gem "thin", "~> 1.8"

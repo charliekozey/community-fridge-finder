@@ -1,8 +1,4 @@
 class Food < ActiveRecord::Base
-    belongs_to :user
-    belongs_to :fridge
-
-
-    private
-        
+  belongs_to :fridge
+  belongs_to :user
 end
