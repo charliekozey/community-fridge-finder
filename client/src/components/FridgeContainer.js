@@ -17,7 +17,7 @@ function FridgeContainer({fridges, handleClick, deleteFridge}) {
     return (
         <div className="fridge-list">
             <div className="fridge-list-top">
-                <h2>select a fridge</h2>
+                <h2>Select a fridge</h2>
                 <button id="add-fridge-button">
                     <Link to="/fridges/new">
                         Add New Fridge    

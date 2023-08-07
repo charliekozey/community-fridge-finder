@@ -6,7 +6,7 @@ function Header({user}){
         <header className="header">
             <div id="header-contents-left">
                 <Link to="/fridges/">
-                    <h1>Community Fridge Finder</h1>
+                    <h1>NYC Fridge Finder</h1>
                 </Link>
             </div>
             {user && <h4>Welcome, {user.first_name}</h4>}
