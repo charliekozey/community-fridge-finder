@@ -20,11 +20,11 @@ export default function NewFridgeForm({ submitNew }) {
           <form onSubmit={handleSubmit}>
               <label htmlFor="location">Fridge Location: </label>
               <input onChange={(e) => setValue(e.target.value)} value={value} type="text" id="location" name="location" />
-              <input type="submit"/>
+              <input type="submit" value="Add" />
           </form>
       </div>
     )
   }
 
-  else return <div className="view-container-message">New fridge submitted! ${value}</div>
+  else return <div className="view-container-message">New fridge submitted!</div>
 }
