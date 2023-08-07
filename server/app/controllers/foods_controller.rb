@@ -4,6 +4,7 @@ class FoodsController < ApplicationController
   # GET /foods or /foods.json
   def index
     @foods = Food.all
+    render json: @foods
   end
 
   # GET /foods/1 or /foods/1.json
@@ -21,17 +22,19 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
+    @food = Food.create!(food_params)
 
-    respond_to do |format|
-      if @food.save
-        format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
-        format.json { render :show, status: :created, location: @food }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @food.save
+    #     format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
+    #     format.json { render :show, status: :created, location: @food }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @food.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    render json: @food
   end
 
   # PATCH/PUT /foods/1 or /foods/1.json
