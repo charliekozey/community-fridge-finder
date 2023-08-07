@@ -15,7 +15,7 @@ class FridgesController < ApplicationController
   # GET /fridges/new
   def new
     @fridge = Fridge.new
-  end
+end
 
   # GET /fridges/1/edit
   def edit
@@ -23,17 +23,19 @@ class FridgesController < ApplicationController
 
   # POST /fridges or /fridges.json
   def create
-    @fridge = Fridge.new(fridge_params)
+    @fridge = Fridge.create!(fridge_params)
 
-    respond_to do |format|
-      if @fridge.save
-        format.html { redirect_to fridge_url(@fridge), notice: "Fridge was successfully created." }
-        format.json { render :show, status: :created, location: @fridge }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @fridge.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @food.save
+    #     format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
+    #     format.json { render :show, status: :created, location: @food }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @food.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    render json: @fridge
   end
 
   # PATCH/PUT /fridges/1 or /fridges/1.json

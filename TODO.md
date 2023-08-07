@@ -1,5 +1,9 @@
 # TODO:
 
+## Backend error handling
+
+## Frontend error handling
+
 ## Add development instructions to readme:
 
 * Ruby version
