@@ -20,12 +20,6 @@ img {
   margin: 0% 2% 0% 0%;
 }
 
-#header-contents-left{
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-}
-
 .main {
   width: 100%;
   display: flex;
@@ -52,8 +46,7 @@ a{
   justify-content: space-between;
   /* align-items: center; */
   flex-wrap: wrap;
-  background-color: #eeeeee;
-  overflow: scroll;
+  background-color: #ffffff;
   max-height: 85vh;
   max-width: 60%;
   min-width: 482px;
@@ -76,13 +69,11 @@ a{
 }
 
 .view-container {
-  background-color: #eeeeee;
+  background-color: #ffffff;
   /* padding: 10px; */
   width: 37%;
-  overflow: scroll;
   font-size: 24px;
   line-height: 32px;
-  max-height: 85vh;
   flex-flow: column;
   margin: 10px 10px;
 }
@@ -108,7 +99,7 @@ a{
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 10px 5%;
+  padding: 10px 15px;
   box-sizing: border-box;
 }
 
@@ -131,7 +122,7 @@ h2 {
   font-size: 28px;
 }
 
-.fridge-card{
+.fridge-card {
   border: 4px solid black;
   border-radius: 5px;
   /* width: 40%; */
@@ -145,6 +136,22 @@ h2 {
   filter: drop-shadow(-20px -2px #00204a);
 }
 
+.fridge-card-selected {
+  border: 4px solid black;
+  border-radius: 5px;
+  /* width: 40%; */
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 40px 20px 10px;
+  background-color: #fff;
+  width: 168px;
+  min-width: 168px;
+  filter: drop-shadow(-20px -2px #ffcc00);
+}
+
+
+
 .fridge-name{
   text-align: center;
   padding: 21px;
@@ -156,7 +163,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
+
 }
+
+
 
 .fridge-door{
   /* padding: 5% 2%; */
@@ -166,65 +177,34 @@ h2 {
   align-items: center;
 }
 
-.fridge-door .magnets{
-  margin: 30px 5px;
-  text-align: center;
-  letter-spacing: 10px;
+.fridge-door-selected {
+  /* padding: 5% 2%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
   background-color: #ffcc00;
   border: none;
   color: #00204a;
-  /* padding: 10px 20px; */
   text-align: center;
   text-decoration: none;
-  /* display: block; */
   font-size: 16px;
-  width: 150px;
-  max-width: fit-content;
   padding: 4px 5px;
   border-radius: 5px;
   cursor: pointer;
   filter: drop-shadow(1px 2px #00204a);
 }
 
-#fridge-detail-button-box{
+#fridge-detail-button-box {
   display: flex;
   justify-content: space-around;
 }
 
-/* ================================================
-stupdid letter magnet css
-================================================ */
-
-.fridge-door a {
-  text-decoration: none;
-  font-family:'Rubik';
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: .2em;
-  display: block;
-  line-height: 1.4;
-  text-transform: uppercase;
-  color: hsl(25,86%,58%);
-  text-shadow:
-    rgba(0,0,5,.4) 1px 1px,
-    rgba(0,0,5,.4) -1px -1px,    
-    rgba(0,0,5,.4) -2px -2px 6px,
-    hsl(25,86%,50%) -2px -2px,
-    hsl(25,86%,50%) -1px -2px,
-    hsl(25,86%,50%) -1px -3px,
-    hsl(25,86%,50%) -2px -4px,
-    hsl(25,86%,50%) -2px -5px,
-    hsl(25,86%,50%) -3px -6px,
-    hsl(25,86%,58%) -4px -7px,  
-    rgba(0,0,5,.4) 3px 4px 5px,
-    rgba(0,0,5,.2) -3px -4px 5px;  
-}
-
-.fridge-door span{
-  display: inline-block;
+#new-fridge-form {
+  padding: 10px 15px;
 }
 
 #add-fridge-button a{
@@ -237,58 +217,14 @@ stupdid letter magnet css
   margin: 30px 20px;
 }
 
-.fridge-door span:nth-child(2), .fridge-door span:nth-child(5){
-  color: hsl(198,82%,60%);
-  text-shadow:
-    rgba(0,0,5,.4) 1px 1px,
-    rgba(0,0,5,.4) -1px -1px,    
-    rgba(0,0,5,.4) -2px -2px 6px,
-    hsl(198,82%,52%) -2px -2px,
-    hsl(198,82%,52%) -1px -2px,
-    hsl(198,82%,52%) -1px -3px,
-    hsl(198,82%,52%) -2px -4px,
-    hsl(198,82%,52%) -2px -5px,
-    hsl(198,82%,52%) -3px -6px,
-    hsl(198,82%,60%) -4px -7px,  
-    rgba(0,0,5,.4) 3px 4px 5px,
-    rgba(0,0,5,.2) -3px -4px 5px;  
-    transform: rotate(-3deg);
+#add-food-button {
+  height: 45px;
+  width: 120px;
+  margin: 0 0 10px 0;
 }
 
-.fridge-door span:nth-child(3), .fridge-door span:nth-child(6){
-  color: hsl(287, 33%, 46%);
-  text-shadow:
-    rgba(0,0,5,.4) 1px 1px,
-    rgba(0,0,5,.4) -1px -1px,    
-    rgba(0,0,5,.4) -2px -2px 6px,
-    hsl(287, 33%, 38%) -2px -2px,
-    hsl(287, 33%, 38%) -1px -2px,
-    hsl(287, 33%, 38%) -1px -3px,
-    hsl(287, 33%, 38%) -2px -4px,
-    hsl(287, 33%, 38%) -2px -5px,
-    hsl(287, 33%, 38%) -3px -6px,
-    hsl(287, 33%, 46%) -4px -7px,  
-    rgba(0,0,5,.4) 3px 4px 5px,
-    rgba(0,0,5,.2) -3px -4px 5px;  
-    transform: rotate(3deg) translateY(4%);
+#add-fridge-button {
+  height: 50px;
+  width: 150px;
+  margin: 0 0 10px 0;
 }
-
-.fridge-door span:nth-child(4), .fridge-door span:nth-child(7){
-  color: hsl(51, 93%, 63%);
-  text-shadow:
-    rgba(0,0,5,.4) 1px 1px,
-    rgba(0,0,5,.4) -1px -1px,    
-    rgba(0,0,5,.4) -2px -2px 6px,
-    hsl(51, 93%, 55%) -2px -2px,
-    hsl(51, 93%, 55%) -1px -2px,
-    hsl(51, 93%, 55%) -1px -3px,
-    hsl(51, 93%, 55%) -2px -4px,
-    hsl(51, 93%, 55%) -2px -5px,
-    hsl(51, 93%, 55%) -3px -6px,
-    hsl(51, 93%, 46%) -4px -7px,  
-    rgba(0,0,5,.4) 3px 4px 5px,
-    rgba(0,0,5,.2) -3px -4px 5px;  
-    transform:rotate(5deg) translateY(1%);
-}
-
-

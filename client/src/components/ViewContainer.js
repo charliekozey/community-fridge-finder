@@ -4,7 +4,7 @@ import FridgeDetail from './FridgeDetail';
 import NewFridgeForm from './NewFridgeForm';
 import EditFridgeForm from './EditFridgeForm';
 
-function ViewContainer({ removeFood, selectedFridge, addNewFood, submitNew, editFood, editFridgeLocation }) {
+function ViewContainer({ removeFood, setSelectedFridge, selectedFridge, addNewFood, submitNew, editFood, editFridgeLocation }) {
     const params = useParams();
 
     return (
@@ -25,7 +25,7 @@ function ViewContainer({ removeFood, selectedFridge, addNewFood, submitNew, edit
                     <EditFridgeForm fridge={selectedFridge}/>
                 </Route>
                 <Route exact path="/fridges/:id">
-                    <FridgeDetail editFood={editFood} removeFood={removeFood} fridge={selectedFridge} addNewFood={addNewFood} editFridgeLocation={editFridgeLocation} />
+                    <FridgeDetail setSelectedFridge={setSelectedFridge} editFood={editFood} removeFood={removeFood} fridge={selectedFridge} addNewFood={addNewFood} editFridgeLocation={editFridgeLocation} />
                 </Route>
                 <Route path="/" >
                     <div className="view-container-message">

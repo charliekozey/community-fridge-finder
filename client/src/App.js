@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import Header from "./components/Header"
 import FridgeContainer from './components/FridgeContainer';
 import ViewContainer from './components/ViewContainer';
@@ -9,13 +10,14 @@ function App() {
   const [fridges, setFridges] = useState([])
   const [selectedFridge, setSelectedFridge] = useState()
   const [user, setUser] = useState()
+  const params = useParams()
 
   useEffect(() => {
     fetch("http://localhost:9292/fridges")
       .then(res => res.json())
       .then(data => setFridges(data))
 
-    fetch("http://localhost:9292/users/2")
+    fetch("http://localhost:9292/users/3")
       .then(res => res.json())
       .then(data => {
         setUser(data)
@@ -38,7 +40,7 @@ function App() {
         })
         setSelectedFridge(selectedFridge => ({ ...selectedFridge, foods: removedFoodList }))
         setFridges(fridges.map(fridge => {
-          if (fridge.id === data.fridge_id) {
+          if (fridge.id === data.fridge.id) {
             return { ...fridge, foods: removedFoodList }
           }
           return fridge
@@ -96,17 +98,16 @@ function App() {
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setFridges(fridges.map(fridge => {
-        if (fridge.id === data.id) {
-          return { ...fridge, location: updatedLocation }
-        }
-        else {
-          return fridge
-        }
-      }))
-      setSelectedFridge(data)
-    })
+          if (fridge.id === data.id) {
+            return { ...fridge, location: updatedLocation }
+          }
+          else {
+            return fridge
+          }
+        }))
+        setSelectedFridge(data)
+      })
   }
 
   function editFood(food, food_id) {
@@ -158,13 +159,12 @@ function App() {
         <Header user={user} />
       </div>
       <div className="main">
-        <FridgeContainer fridges={fridges} handleClick={setSelectedFridge} deleteFridge={deleteFridge} />
-        <ViewContainer removeFood={removeFood} selectedFridge={selectedFridge} addNewFood={addNewFood} submitNew={submitNew} editFood={editFood} editFridgeLocation={editFridgeLocation} />
-
+        <ViewContainer setSelectedFridge={setSelectedFridge} removeFood={removeFood} selectedFridge={selectedFridge} addNewFood={addNewFood} submitNew={submitNew} editFood={editFood} editFridgeLocation={editFridgeLocation} />
+        <FridgeContainer selectedFridge={selectedFridge} fridges={fridges} handleClick={setSelectedFridge} deleteFridge={deleteFridge} />
       </div>
     </div>
 
-  );
+  )
 }
 
 export default App;

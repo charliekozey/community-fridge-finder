@@ -5,11 +5,11 @@ function Header({user}){
     return (
         <header className="header">
             <div id="header-contents-left">
-                <Link to="/fridges/">
+                <Link to="/">
                     <h1>NYC Fridge Finder</h1>
                 </Link>
             </div>
-            {user && <h4>Welcome, {user.first_name}</h4>}
+            {/* {user && <h4>Welcome, {user.first_name}</h4>} */}
         </header>
     );
 }

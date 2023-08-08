@@ -1,4 +1,4 @@
 class FoodSerializer < ActiveModel::Serializer
-    attributes :name, :quantity
+    attributes :name, :quantity, :id
     belongs_to :fridge
 end

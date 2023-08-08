@@ -3,11 +3,10 @@ import FridgeCard from "./FridgeCard";
 // import ViewContainer from './ViewContainer'
 import { Link } from "react-router-dom"
 
-function FridgeContainer({fridges, handleClick, deleteFridge}) {
+function FridgeContainer({fridges, handleClick, deleteFridge, selectedFridge}) {
 
     const mapFridges = fridges.map(fridge => {
-        console.log(fridge)
-        return <FridgeCard key={fridge.id} fridge={fridge} handleClick={handleClick} deleteFridge={deleteFridge}/>
+        return <FridgeCard key={fridge.id} fridge={fridge} handleClick={handleClick} deleteFridge={deleteFridge} selectedFridge={selectedFridge} />
     })
       
     return (

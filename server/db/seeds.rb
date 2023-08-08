@@ -1,3 +1,8 @@
+puts "🗑 Destroying existing entries..."
+Fridge.destroy_all
+User.destroy_all
+Food.destroy_all
+
 puts "🌱 Seeding fridges..."
 
 fridge1 = Fridge.create(location: "Broome & Bowery")

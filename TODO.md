@@ -18,6 +18,8 @@
 
 ## Frontend error handling
 
+## Fridge photos, exterior and interior updates
+
 ## Add development instructions to readme:
 
 * Ruby version

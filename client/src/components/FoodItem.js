@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 function FoodItem({ food, removeFood, editFood }) {
-    // console.log(food)
     const [showEdit, setShowEdit] = useState(false)
     const [edit, setEdit] = useState({name: food.name, quantity: food.quantity})
 
@@ -9,8 +8,6 @@ function FoodItem({ food, removeFood, editFood }) {
         e.preventDefault();
         setShowEdit(false)
         editFood(edit, food.id)
-        // console.log(food)
-        // console.log(food.id)
         setEdit({name: '', quantity: 1});
       }
 

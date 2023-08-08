@@ -40,25 +40,27 @@ end
 
   # PATCH/PUT /fridges/1 or /fridges/1.json
   def update
-    respond_to do |format|
-      if @fridge.update(fridge_params)
-        format.html { redirect_to fridge_url(@fridge), notice: "Fridge was successfully updated." }
-        format.json { render :show, status: :ok, location: @fridge }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @fridge.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @fridge.update(fridge_params)
+    #     format.html { redirect_to fridge_url(@fridge), notice: "Fridge was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @fridge }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @fridge.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /fridges/1 or /fridges/1.json
   def destroy
     @fridge.destroy
 
-    respond_to do |format|
-      format.html { redirect_to fridges_url, notice: "Fridge was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    render json: { "message": "Food deleted" }
+
+    # respond_to do |format|
+    #   format.html { redirect_to fridges_url, notice: "Fridge was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
