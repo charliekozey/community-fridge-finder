@@ -207,23 +207,23 @@ button {
   padding: 10px 15px;
 }
 
-#add-fridge-button a{
+#new-fridge-button a{
   color: #00204a;
 }
 
-#add-fridge-button{
+#new-fridge-button{
   height: fit-content;
   width: fit-content;
   margin: 30px 20px;
 }
 
-#add-food-button {
+#new-food-button {
   height: 45px;
   width: 120px;
   margin: 0 0 10px 0;
 }
 
-#add-fridge-button {
+#new-fridge-button {
   height: 50px;
   width: 150px;
   margin: 0 0 10px 0;

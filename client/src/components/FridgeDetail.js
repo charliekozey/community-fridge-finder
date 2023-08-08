@@ -46,7 +46,7 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
         <div className="view-display-box">
           <h1>{fridge.location}</h1>
           <div id="fridge-detail-button-box">
-            {!showForm && <button id="add-food-button" onClick={() => setShowForm(true)}>Add Food</button>}
+            {!showForm && <button id="new-food-button" onClick={() => setShowForm(true)}>Add Food</button>}
             {showForm &&
               <form onSubmit={e => handleNewFoodSubmit(e)}>
                 <label htmlFor="quantity">What did you drop off?
