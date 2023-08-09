@@ -12,7 +12,7 @@ function App() {
   const params = useParams()
 
   useEffect(() => {
-   fetch("https://nyc-fridge-finder.onrender.com/fridges")
+   fetch("https://nyc-fridge-finder.onrender.com/refrigerators")
       .then(res => res.json())
       .then(data => setFridges(data))
 
@@ -73,7 +73,7 @@ function App() {
   }
 
   function submitNew(newFridgeLocation) {
-   fetch("https://nyc-fridge-finder.onrender.com/fridges", {
+   fetch("https://nyc-fridge-finder.onrender.com/refrigerators", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -87,7 +87,7 @@ function App() {
   }
 
   function editFridgeLocation(updatedLocation, fridge_id) {
-   fetch(`https://nyc-fridge-finder.onrender.com/fridges/${fridge_id}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/refrigerators/${fridge_id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -141,7 +141,7 @@ function App() {
 
 
   function deleteFridge(fridgeId) {
-   fetch(`https://nyc-fridge-finder.onrender.com/fridges/${fridgeId}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/refrigerators/${fridgeId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })

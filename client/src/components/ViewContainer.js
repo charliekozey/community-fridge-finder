@@ -18,13 +18,13 @@ function ViewContainer({ removeFood, setSelectedFridge, selectedFridge, addNewFo
                     </div>
                 </Route> */}
                 
-                <Route exact path="/fridges/new">
+                <Route exact path="/refrigerators/new">
                     <NewFridgeForm submitNew={submitNew} />
                 </Route>
-                <Route exact path="/fridges/:id/edit">
+                <Route exact path="/refrigerators/:id/edit">
                     <EditFridgeForm fridge={selectedFridge}/>
                 </Route>
-                <Route exact path="/fridges/:id">
+                <Route exact path="/refrigerators/:id">
                     <FridgeDetail setSelectedFridge={setSelectedFridge} editFood={editFood} removeFood={removeFood} fridge={selectedFridge} addNewFood={addNewFood} editFridgeLocation={editFridgeLocation} />
                 </Route>
                 <Route path="/" >
