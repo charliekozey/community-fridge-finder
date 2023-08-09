@@ -12,11 +12,11 @@ function App() {
   const params = useParams()
 
   useEffect(() => {
-   fetch("https://nyc-fridge-finder.onrender.com/refrigerators")
+   fetch("api/refrigerators")
       .then(res => res.json())
       .then(data => setFridges(data))
 
-   fetch("https://nyc-fridge-finder.onrender.com/users/3")
+   fetch("api/users/3")
       .then(res => res.json())
       .then(data => {
         setUser(data)
@@ -28,7 +28,7 @@ function App() {
   }
 
   function removeFood(foodId) {
-   fetch(`https://nyc-fridge-finder.onrender.com/foods/${foodId}`, {
+   fetch(`api/foods/${foodId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })
@@ -48,7 +48,7 @@ function App() {
   }
 
   function addNewFood(food, fridge_id) {
-   fetch("https://nyc-fridge-finder.onrender.com/foods", {
+   fetch("api/foods", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -73,7 +73,7 @@ function App() {
   }
 
   function submitNew(newFridgeLocation) {
-   fetch("https://nyc-fridge-finder.onrender.com/refrigerators", {
+   fetch("api/refrigerators", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -87,7 +87,7 @@ function App() {
   }
 
   function editFridgeLocation(updatedLocation, fridge_id) {
-   fetch(`https://nyc-fridge-finder.onrender.com/refrigerators/${fridge_id}`, {
+   fetch(`api/refrigerators/${fridge_id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -110,7 +110,7 @@ function App() {
   }
 
   function editFood(food, food_id) {
-   fetch(`https://nyc-fridge-finder.onrender.com/foods/${food_id}`, {
+   fetch(`api/foods/${food_id}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -141,7 +141,7 @@ function App() {
 
 
   function deleteFridge(fridgeId) {
-   fetch(`https://nyc-fridge-finder.onrender.com/refrigerators/${fridgeId}`, {
+   fetch(`api/refrigerators/${fridgeId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })

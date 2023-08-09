@@ -1,4 +1,4 @@
-class FridgesController < ApplicationController
+class Api::FridgesController < ApplicationController
   before_action :set_fridge, only: %i[ show edit update destroy ]
 
   # GET /fridges or /fridges.json
