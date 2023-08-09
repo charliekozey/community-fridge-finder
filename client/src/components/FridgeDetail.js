@@ -13,7 +13,7 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
 
   useEffect(() => {
     params.id &&
-     fetch(`api/refrigerators/${params.id}`)
+     fetch(`/api/fridges/${params.id}`)
         .then(res => res.json())
         .then(data => {
           setSelectedFridge(data)

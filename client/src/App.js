@@ -12,11 +12,11 @@ function App() {
   const params = useParams()
 
   useEffect(() => {
-   fetch("api/refrigerators")
+    fetch("/api/fridges")
       .then(res => res.json())
       .then(data => setFridges(data))
 
-   fetch("api/users/3")
+    fetch("/api/users/3")
       .then(res => res.json())
       .then(data => {
         setUser(data)
@@ -28,7 +28,7 @@ function App() {
   }
 
   function removeFood(foodId) {
-   fetch(`api/foods/${foodId}`, {
+    fetch(`/api/foods/${foodId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })
@@ -48,7 +48,7 @@ function App() {
   }
 
   function addNewFood(food, fridge_id) {
-   fetch("api/foods", {
+    fetch("/api/foods", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -73,7 +73,7 @@ function App() {
   }
 
   function submitNew(newFridgeLocation) {
-   fetch("api/refrigerators", {
+    fetch("/api/fridges", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -87,7 +87,7 @@ function App() {
   }
 
   function editFridgeLocation(updatedLocation, fridge_id) {
-   fetch(`api/refrigerators/${fridge_id}`, {
+    fetch(`/api/fridges/${fridge_id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -110,7 +110,7 @@ function App() {
   }
 
   function editFood(food, food_id) {
-   fetch(`api/foods/${food_id}`, {
+    fetch(`/api/foods/${food_id}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -141,7 +141,7 @@ function App() {
 
 
   function deleteFridge(fridgeId) {
-   fetch(`api/refrigerators/${fridgeId}`, {
+    fetch(`/api/fridges/${fridgeId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })
