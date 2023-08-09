@@ -4,7 +4,6 @@ import Header from "./components/Header"
 import FridgeContainer from './components/FridgeContainer';
 import ViewContainer from './components/ViewContainer';
 
-
 function App() {
 
   const [fridges, setFridges] = useState([])
@@ -13,11 +12,11 @@ function App() {
   const params = useParams()
 
   useEffect(() => {
-    fetch("http://localhost:9292/fridges")
+   fetch("https://nyc-fridge-finder.onrender.com/fridges")
       .then(res => res.json())
       .then(data => setFridges(data))
 
-    fetch("http://localhost:9292/users/3")
+   fetch("https://nyc-fridge-finder.onrender.com/users/3")
       .then(res => res.json())
       .then(data => {
         setUser(data)
@@ -29,7 +28,7 @@ function App() {
   }
 
   function removeFood(foodId) {
-    fetch(`http://localhost:9292/foods/${foodId}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/foods/${foodId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })
@@ -49,7 +48,7 @@ function App() {
   }
 
   function addNewFood(food, fridge_id) {
-    fetch("http://localhost:9292/foods", {
+   fetch("https://nyc-fridge-finder.onrender.com/foods", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -74,7 +73,7 @@ function App() {
   }
 
   function submitNew(newFridgeLocation) {
-    fetch("http://localhost:9292/fridges", {
+   fetch("https://nyc-fridge-finder.onrender.com/fridges", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -88,7 +87,7 @@ function App() {
   }
 
   function editFridgeLocation(updatedLocation, fridge_id) {
-    fetch(`http://localhost:9292/fridges/${fridge_id}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/fridges/${fridge_id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -111,7 +110,7 @@ function App() {
   }
 
   function editFood(food, food_id) {
-    fetch(`http://localhost:9292/foods/${food_id}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/foods/${food_id}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -142,7 +141,7 @@ function App() {
 
 
   function deleteFridge(fridgeId) {
-    fetch(`http://localhost:9292/fridges/${fridgeId}`, {
+   fetch(`https://nyc-fridge-finder.onrender.com/fridges/${fridgeId}`, {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
     })

@@ -13,7 +13,7 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
 
   useEffect(() => {
     params.id &&
-      fetch(`http://localhost:9292/fridges/${params.id}`)
+     fetch(`https://nyc-fridge-finder.onrender.com/fridges/${params.id}`)
         .then(res => res.json())
         .then(data => {
           setSelectedFridge(data)
