@@ -15,7 +15,7 @@ class Api::FridgesController < ApplicationController
   # GET /fridges/new
   def new
     @fridge = Fridge.new
-end
+  end
 
   # GET /fridges/1/edit
   def edit

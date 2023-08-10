@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.create(user_params)
+    @user = User.create!(user_params)
     render json: @user
 
     # respond_to do |format|
