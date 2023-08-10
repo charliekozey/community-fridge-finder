@@ -158,8 +158,17 @@ function App() {
         <Header user={user} />
       </div>
       <div className="main">
-        <ViewContainer setSelectedFridge={setSelectedFridge} removeFood={removeFood} selectedFridge={selectedFridge} addNewFood={addNewFood} submitNew={submitNew} editFood={editFood} editFridgeLocation={editFridgeLocation} />
-        <FridgeContainer selectedFridge={selectedFridge} fridges={fridges} handleClick={setSelectedFridge} deleteFridge={deleteFridge} />
+        <ViewContainer 
+          setSelectedFridge={setSelectedFridge} 
+          removeFood={removeFood} 
+          selectedFridge={selectedFridge} 
+          addNewFood={addNewFood} 
+          submitNew={submitNew} 
+          editFood={editFood} 
+          editFridgeLocation={editFridgeLocation} 
+          fridges={fridges} 
+          deleteFridge={deleteFridge} 
+        />
       </div>
     </div>
 

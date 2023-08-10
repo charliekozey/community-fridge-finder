@@ -3,20 +3,16 @@ import { Link } from 'react-router-dom';
 function FridgeCard({ fridge, handleClick, deleteFridge, selectedFridge }) {
 
     return (
-        <Link to={`/refrigerators/${fridge.id}`} onClick={() => handleClick(fridge)} >
-            {selectedFridge ?
-                <div className={fridge.id === selectedFridge.id ? "fridge-card-selected" : "fridge-card"} >
-                    <div className="fridge-name">{fridge.location}</div>
-                </div>
-                :
-                <div className="fridge-card">
-                    <div className="fridge-name">{fridge.location}</div>
-                </div>
-            }
-                {/* <div>
+        <div className="fridge-card">
+            <li className="fridge-name">
+                <Link to={`/refrigerators/${fridge.id}`} onClick={() => handleClick(fridge)} >
+                    {fridge.location}
+                </Link>
+            </li>
+            {/* <div>
                     <button onClick={() => deleteFridge(fridge.id)}>delete</button>
                 </div> */}
-        </Link>
+        </div>
     )
 }
 

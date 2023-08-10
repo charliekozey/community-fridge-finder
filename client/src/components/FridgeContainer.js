@@ -4,25 +4,28 @@ import FridgeCard from "./FridgeCard";
 import { Link } from "react-router-dom"
 
 function FridgeContainer({fridges, handleClick, deleteFridge, selectedFridge}) {
-
-    const mapFridges = fridges.map(fridge => {
+    const [searchInput, setSearchInput] = useState("")
+    const filteredFridges = fridges.filter(fridge => {
+        return fridge.location.toLowerCase().includes(searchInput.toLowerCase())
+    })
+    const mapFridges = filteredFridges.map(fridge => {
         return <FridgeCard key={fridge.id} fridge={fridge} handleClick={handleClick} deleteFridge={deleteFridge} selectedFridge={selectedFridge} />
     })
       
     return (
         <div className="fridge-list">
-            <div className="fridge-list-fridges">
+            <input type="text" placeholder="search by fridge name..." value={searchInput} onChange={e => setSearchInput(e.target.value)}></input>
+            <ul className="fridge-list-fridges">
                 {mapFridges}
-            </div>
+            </ul>
             <div className="fridge-buttons">
                 <button id="new-fridge-button">
                     <Link to="/refrigerators/new">
-                        Add New Fridge    
+                        Add New Fridge
                     </Link>
                 </button>
             </div>
         </div>
-        
     )
 }
 

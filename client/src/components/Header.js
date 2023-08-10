@@ -9,6 +9,14 @@ function Header({user}){
                     <h1>NYC Fridge Finder</h1>
                 </Link>
             </div>
+            <div className ="nav">
+                <Link to="/refrigerators">
+                    <h3>List</h3>
+                </Link>
+                <Link to="/about">
+                    <h3>About</h3>
+                </Link>
+            </div>
             {/* {user && <h4>Welcome, {user.first_name}</h4>} */}
         </header>
     );

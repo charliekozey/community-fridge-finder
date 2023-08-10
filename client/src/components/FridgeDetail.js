@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import FoodItem from './FoodItem';
 
 export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, addNewFood, editFood, editFridgeLocation }) {
@@ -42,6 +42,9 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
 
   return (
     <div>
+      <Link to="/refrigerators">
+        {"< "} Back to fridge list
+      </Link>
       {fridge ?
         <div className="view-display-box">
           <h1>{fridge.location}</h1>
@@ -71,6 +74,7 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
                     value={newFood.name} />
                 </label>
                 <input type="submit" value="Add food" />
+                <input type="button" value="Cancel adding food" onClick={e => setShowForm(false)} />
               </form>
             }
             {/* {!editLocation && <button onClick={() => setEditLocation(true)}>Edit fridge location</button>} */}
