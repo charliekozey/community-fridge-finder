@@ -45,6 +45,7 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
       {fridge ?
         <div className="view-display-box">
           <h1>{fridge.location}</h1>
+          {fridge && foodList.length ? foodList : <p>Nothing in this fridge right now</p>}
           <div id="fridge-detail-button-box">
             {!showForm && <button id="new-food-button" onClick={() => setShowForm(true)}>Add Food</button>}
             {showForm &&
@@ -87,7 +88,6 @@ export default function FridgeDetail({ removeFood, setSelectedFridge, fridge, ad
               </form>
             } */}
           </div>
-          {fridge && foodList.length ? foodList : <p>Nothing in this fridge right now</p>}
         </div>
         : <p className="view-container-message">Select a fridge to show its contents</p>
       }
