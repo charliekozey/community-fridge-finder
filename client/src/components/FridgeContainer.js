@@ -14,7 +14,10 @@ function FridgeContainer({fridges, handleClick, deleteFridge, selectedFridge}) {
       
     return (
         <div className="fridge-list">
-            <input type="text" placeholder="search by fridge name..." value={searchInput} onChange={e => setSearchInput(e.target.value)}></input>
+            {/* <button name="search-by-fridge">Search by Fridge Name</button> */}
+            {/* <button name="search-by-food">Search by Food</button> */}
+            <input id="fridge-search" type="text" placeholder="search by fridge name..." value={searchInput} onChange={e => setSearchInput(e.target.value)}></input>
+            {/* <input id="food-search" type="text" placeholder="search for a food..." value={searchInput} onChange={e => setSearchInput(e.target.value)}></input> */}
             <ul className="fridge-list-fridges">
                 {mapFridges}
             </ul>
