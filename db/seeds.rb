@@ -11,9 +11,10 @@ fridge3 = Fridge.create(location: "The Chelsea Fridge")
 
 puts "🌱 Seeding users..."
 
-user1 = User.create(first_name: "Spencer", last_name: "Johnson", state: "MO")
-user2 = User.create(first_name: "Michael", last_name: "Dally", state: "PA")
-user3 = User.create(first_name: "Charlie", last_name: "Kozey", state: "NY")
+user1 = User.create(username: "foodie212", email: "foo@protonmail.com", password_digest: "676767676")
+user2 = User.create(username: "boobar36", email: "bb@protonmail.com", password_digest: "89898989")
+user3 = User.create(username: "prometheus5", email: "prmths@protonmail.com", password_digest: "90909090")
+
 
 puts "🌱 Seeding foods..."
 

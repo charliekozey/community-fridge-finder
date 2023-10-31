@@ -10,7 +10,7 @@ Currently under construction. Here's what's up next:
 
 - [ ] OpenStreetMap integration
 
-- [ ] Search by fridge name
+- [x] Search by fridge name
 
 - [ ] Search by food
 
